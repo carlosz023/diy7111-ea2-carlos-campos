@@ -1,11 +1,52 @@
 version: '3.8'
+
 services:
-  prometheus:
-    build: .
-    container_name: diy7111-ea2-carlos-campos-container
-    ports:
-      - '9090:9090'
+  # 1. Base de Datos (PostgreSQL)
+  vzeta-db:
+    image: postgres:15-alpine
+    container_name: vzeta-db
+    restart: always
+    environment:
+      POSTGRES_USER: vzeta_user
+      POSTGRES_PASSWORD: vzeta_password
+      POSTGRES_DB: vzeta_matrix
     volumes:
-      - prometheus_data:/prometheus
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - vzeta-net
+
+  # 2. Aplicación Backend (Flask)
+  vzeta-app:
+    build: .
+    container_name: vzeta-app
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://vzeta_user:vzeta_password@vzeta-db:5432/vzeta-matrix
+      FLASK_ENV: production
+    depends_on:
+      - vzeta-db
+    networks:
+      - vzeta-net
+
+  # 3. Proxy Inverso (NGINX) - Expone el puerto 80 al cliente
+  vzeta-nginx:
+    image: nginx:alpine
+    container_name: vzeta-nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - vzeta-app
+    networks:
+      - vzeta-net
+
 volumes:
-  prometheus_data:
+  postgres_data:
+    name: vzeta_postgres_data
+
+networks:
+  vzeta-net:
+    name: vzeta_bridge_network
+    driver: bridge
