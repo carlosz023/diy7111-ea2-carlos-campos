@@ -7,7 +7,7 @@
 
 ---
 
-## 1. 📑 Justificación Técnica y Arquitectura (IL 1.1, IL 3.4)
+## 1. Justificación Técnica y Arquitectura (IL 1.1, IL 3.4)
 
 ### A. Comparativa: Contenedores (Docker) vs. Virtualización Tradicional (Hipervisores)
 * **Aislamiento y Recursos:** Los hipervisores tradicionales requieren un Sistema Operativo Invitado completo por cada máquina virtual, lo que genera una alta sobrecarga de CPU, Memoria RAM y almacenamiento. Docker realiza un aislamiento a nivel de proceso compartiendo el Kernel del sistema operativo anfitrión (Ubuntu), consumiendo apenas megabytes de memoria y permitiendo un aprovechamiento óptimo de los recursos asignados en la instancia `t2.small`.
@@ -19,7 +19,7 @@ Dadas las restricciones de la empresa VZeta (sin soporte para Kubernetes/EKS), s
 * **Nube Privada vs. Híbrida:** Desplegar una nube privada on-premise requeriría una fuerte inversión en hardware local. Una estrategia híbrida sería ideal a futuro para mantener la base de datos PostgreSQL de forma local por motivos de privacidad regulatoria y el frontend web de Flask en la nube de AWS para absorber tráfico masivo, pero actualmente la solución local con Docker Compose en EC2 cumple eficientemente con los requisitos.
 
 ---
-## 🚀 2. Diagrama de Arquitectura Objetivo (IL 2.4)
+## 2. Diagrama de Arquitectura Objetivo (IL 2.4)
 
 ```text
 Cliente ──▶ HTTP:Puerto 80 ──▶ [ vzeta-nginx ] ──▶ Red Bridge ──▶ [ vzeta-app ] ──▶ [ vzeta-db ]
@@ -27,3 +27,20 @@ Cliente ──▶ HTTP:Puerto 80 ──▶ [ vzeta-nginx ] ──▶ Red Bridge 
                                                                                           │
                                                                                     Volumen Persistente
                                                                                   (postgres_data)
+
+---
+
+## 3. Instrucciones de Despliegue (IL 2.4, IL 3.4)
+
+Para replicar este entorno multi-contenedor en cualquier instancia limpia de AWS EC2 con Docker instalado, ejecute los siguientes comandos:
+
+```bash
+# 1. Clonar el repositorio
+git clone [https://github.com/carlosz023/diy7111-ea2-carlos-campos.git](https://github.com/carlosz023/diy7111-ea2-carlos-campos.git)
+cd diy7111-ea2-carlos-campos
+
+# 2. Desplegar la infraestructura en segundo plano
+docker compose up -d --build
+
+# 3. Verificar el estado de los servicios
+docker compose ps
