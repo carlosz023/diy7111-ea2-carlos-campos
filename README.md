@@ -44,3 +44,26 @@ docker compose up -d --build
 
 # 3. Verificar el estado de los servicios
 docker compose ps
+---
+
+## 4. Evidencias de Funcionamiento (IL 2.2, IL 3.2, IL 3.3)
+### A. Instancia EC2 Activa en AWS Learner Lab
+![Instancia EC2](evidencias/01_instancia_ec2.png)
+
+### B. Docker Engine y Plugin Compose Instalados
+![Docker Instalado](evidencias/02_docker_instalado.png)
+
+### C. Imágenes Construidas Correctamente (Flask Propia, NGINX, Postgres)
+![Imágenes Construidas](evidencias/03_imagenes_construidas.png)
+
+### D. Stack Multi-Contenedor Levantado en Segundo Plano
+![Stack Levantado](evidencias/04_stack_levantado.png)
+
+### E. Volumen de Persistencia Creado
+![Volumen Creado](evidencias/05_volumen_persistencia.png)
+
+### F. Salida del Comando Docker Inspect (Sección Mounts de la BD)
+![Docker Inspect](evidencias/06_docker_inspect.png)
+
+### G. Aplicación VZeta Funcionando en el Navegador (Contador de Visitas)
+![Aplicación Web](evidencias/07_app_funcionando.png)
