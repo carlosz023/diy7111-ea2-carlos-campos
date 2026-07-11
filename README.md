@@ -67,3 +67,53 @@ docker compose ps
 
 ### G. Aplicación VZeta Funcionando en el Navegador (Contador de Visitas)
 ![Aplicación Web](evidencias/07_app_funcionando.png)
+
+### H. Bloque 8: Pruebas del Entorno y Verificaciones de Red
+![Evidencia 8.1](evidencias/8.1.png)
+*Descripción corta de lo realizado en la captura 8.1*
+
+![Evidencia 8.2](evidencias/8.2.png)
+*Descripción corta de lo realizado en la captura 8.2*
+
+![Evidencia 8.3](evidencias/8.3.png)
+*Descripción corta de lo realizado en la captura 8.3*
+
+![Evidencia 8.4](evidencias/8.4.png)
+*Descripción corta de lo realizado en la captura 8.4*
+
+![Evidencia 8.5](evidencias/8.5.png)
+*Descripción corta de lo realizado en la captura 8.5*
+
+![Evidencia 8.6](evidencias/8.6.png)
+*Descripción corta de lo realizado en la captura 8.6*
+
+![Evidencia 8.7](evidencias/8.7.png)
+*Descripción corta de lo realizado en la captura 8.7*
+
+![Evidencia 8.8](evidencias/8.8.png)
+*Descripción corta de lo realizado en la captura 8.8*
+
+![Evidencia 8.9](evidencias/8.9.png)
+*Descripción corta de lo realizado en la captura 8.9*
+
+### I. Bloque 9: Validaciones Finales y Comportamiento del Sistema
+![Evidencia 9.0](evidencias/9.0.png)
+*Descripción corta de lo realizado en la captura 9.0*
+
+![Evidencia 9.1](evidencias/9.1.png)
+*Descripción corta de lo realizado en la captura 9.1*
+
+![Evidencia 9.2](evidencias/9.2.png)
+*Descripción corta de lo realizado en la captura 9.2*
+
+![Evidencia 9.3](evidencias/9.3.png)
+*Descripción corta de lo realizado en la captura 9.3*
+
+![Evidencia 9.4](evidencias/9.4.png)
+*Descripción corta de lo realizado en la captura 9.4*
+
+![Evidencia 9.5](evidencias/9.5.png)
+*Descripción corta de lo realizado en la captura 9.5*
+
+![Evidencia 9.6](evidencias/9.6.png)
+*Descripción corta de lo realizado en la captura 9.6*
